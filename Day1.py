@@ -26,15 +26,15 @@ if response.status_code == 200:
     df['col2'] = df['col2'].sort_values().values
     
     df['diff'] = abs(df['col1'] - df['col2'])
-    sum =  df['diff'].sum()
-    print(sum)
+    print(f"Sum for part 1: {df['diff'].sum()}")
 
     df['count'] = 0
 
+    ###These lines do part 2
     for row, value in enumerate(df['col1']):
         df.loc[row, 'count'] = (df['col2'] == value).sum() * value
 
-    print(df['count'].sum())
+    print(f"Sum for part 2: {df['count'].sum()}")
 
 else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
