@@ -15,8 +15,14 @@ def fetch_data(day):
 
     response = requests.get(url, headers=headers)
 
-    return response
+    if response.status_code == 200:
+        data = response.text
+
+    else:
+        print(f"Failed to fetch data. Status code: {response.status_code}")
+
+    return data
 
 if __name__ == "__main__":
-    response = fetch_data(day=1)
-    print(response.text)
+    data = fetch_data(day=2)
+    print(data)
