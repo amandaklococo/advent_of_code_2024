@@ -1,17 +1,11 @@
 ###Find the difference between the nth smallest number in col1 and col2
 ###Sum these differences
 
-import requests
+
 import pandas as pd
+from fetch_data import fetch_data
 
-
-url = "https://adventofcode.com/2024/day/1/input"
-
-headers = {
-    "Cookie": "session=53616c7465645f5fa76586551f9990d58d70aa5a44bbe86c34f2a12b09917e5bbeab654bb0fbda6b70be1644275b3b25f8936083e32b840d5f03b1db0d8cae21"
-}
-
-response = requests.get(url, headers=headers)
+response = fetch_data(day=1)
 
 ###Check if the request was successful
 if response.status_code == 200:
