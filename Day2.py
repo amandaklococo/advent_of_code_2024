@@ -51,7 +51,7 @@ def drop_cols(df):
         
 
 if __name__ == "__main__":
-    df= data_cleaning()
+    df = data_cleaning()
     df = find_true_rows(df=df)
     print(f"Part 1 solution: {df['increasing_rows'].sum() + df['decreasing_rows'].sum()}")
     df = drop_cols(df=df)
