@@ -9,8 +9,6 @@ from fetch_data import fetch_data
 def clean_data():
     data = fetch_data(day=7)
 
-    # data = open("test.txt", "r")
-    # data = data.read()
     data = data.splitlines()
     data = [line.split() for line in data]
 
@@ -63,7 +61,6 @@ def apply_operations(operations, test_values, list_of_lists, vals):
 
         result = evaluate_left_to_right(expression=expression)
 
-        
         if result == val_to_match:
             sum_list.append(result)
             break
@@ -84,7 +81,6 @@ if __name__ == "__main__":
                                 list_of_lists),
                                 [vals for vals in list_of_lists])
     results = list(np.concatenate(results))
-    results = set(results)
     print(f"Part 1 solution: {int(sum(results))}")
 
     operations = ["+", "*", "||"]
@@ -96,5 +92,4 @@ if __name__ == "__main__":
                                 list_of_lists),
                                 [vals for vals in list_of_lists])
     results = list(np.concatenate(results))
-    # results = set(results)
     print(f"Part 2 solution: {int(sum(results))}")
